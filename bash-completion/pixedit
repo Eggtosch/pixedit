@@ -1,0 +1,10 @@
+_pixedit () {
+	cur="${COMP_WORDS[COMP_CWORD]}"
+	if [[ $cur == -* ]]; then
+		COMPREPLY=($(compgen -W "--to-png --create --update-palette --help" -- "$2"))
+	else
+		_filedir
+	fi
+}
+
+complete -F _pixedit pixedit
